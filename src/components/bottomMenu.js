@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ProjectCard from './projectscard.js'
+// import Menu from '@material-ui/core/Menu';
+// import MenuItem from '@material-ui/core/MenuItem';
+
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -17,25 +17,18 @@ export default function SimpleMenu() {
 
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        About
+      <Button aria-controls="simple-menu" onClick={handleClick}>
+        <a href='#'>About</a>
       </Button>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Skills
+      <Button aria-controls="simple-menu" onClick={handleClick}>
+        <a href='#skills' >Skills</a>
       </Button>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Projects
+      <Button aria-controls="simple-menu" onClick={handleClick}>
+        <a href='#projects'>Projects</a>
       </Button>
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handleClose}>X</MenuItem>
-        <MenuItem></MenuItem>
-      </Menu>
+      <Button aria-controls="simple-menu" onClick={handleClick}>
+        <a href='#'>Contact</a>
+      </Button>
     </div>
   );
 }

@@ -1,26 +1,29 @@
 import React from 'react';
-//import logo from './logo.svg';
+import {Route } from 'react-router-dom'
+
 import SimpleMenu from './components/bottomMenu.js'
+import ImageCard from './components/header.js'
+import Skills from './components/skills'
+import ProjectCard from './components/projectscard.js'
+import About from './components/about.js'
+import ContactForm from './components/contact.js'
+import {data} from './projectData.js'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+        <ImageCard />
       </header>
       <SimpleMenu />
+      <About />
+      <Skills />
+      <h2 id="projects">Projects</h2>
+      <section className="projects">
+     {data.map(project => <ProjectCard key={project.title} project={project}/>) }
+    </section>
+    <ContactForm/>
     </div>
   );
 }
